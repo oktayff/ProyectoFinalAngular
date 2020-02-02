@@ -20,8 +20,13 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@ng-bootstrap/ng-bootstrap": "^5.2.1",
+    "angularfire2": "^5.4.0",
     "bootstrap": "^4.4.1",
+    "firebase": "^7.8.0",
+    "ngx": "^2.4.0",
+    "ngx-toastr": "^11.3.3",
     "rxjs": "~6.4.0",
+    "toastr": "^2.1.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
