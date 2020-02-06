@@ -1,7 +1,8 @@
+import { RegistroComponent } from './autenticacion/componentes/registro/registro.component';
+import { LoginComponent } from './autenticacion/componentes/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CrudModule } from './crud/crud.module';
 import { environment } from './../environments/environment';
-import { AutenticacionModule } from './autenticacion/autenticacion.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -18,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 //Servicios
 
@@ -27,19 +29,22 @@ import { LibroService } from './servicios/libro.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CompartidoModule,
-    AutenticacionModule,
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
     CrudModule,
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireAuthModule
+
   ],
   providers: [
     LibroService

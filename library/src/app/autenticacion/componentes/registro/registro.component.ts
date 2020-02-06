@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  public email: string;
+  public password: string;
+
+  constructor(
+    public authService: AutenticacionService,
+    public router: Router) { }
 
   ngOnInit() {
+
+  }
+
+  onSubmitAddUser() {
+    this.authService.registerUser(this.email, this.password)
+    .then((res) => {
+      alert('Usuario creado correctamente.',);
+     this.router.navigate(['/gestion']);
+    }).catch( (err) => {
+      alert(err.message);
+    });
   }
 
 }
