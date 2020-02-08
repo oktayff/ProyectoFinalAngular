@@ -4,8 +4,6 @@ import { CommonModule } from '@angular/common';
 import { ColumnaUnoComponent } from './vistas/columna-uno/columna-uno.component';
 import { HeaderComponent } from './componentes/header/header.component';
 
-
-
 @NgModule({
   declarations: [ColumnaUnoComponent, HeaderComponent],
   imports: [

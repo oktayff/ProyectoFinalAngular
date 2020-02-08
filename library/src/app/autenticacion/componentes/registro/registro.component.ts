@@ -23,8 +23,8 @@ export class RegistroComponent implements OnInit {
   onSubmitAddUser() {
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
-      alert('Usuario creado correctamente.',);
-     this.router.navigate(['/gestion']);
+      alert('Usuario creado correctamente.');
+      this.router.navigate(['/gestion']);
     }).catch( (err) => {
       alert(err.message);
     });

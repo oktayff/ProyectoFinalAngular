@@ -5,14 +5,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['login']" routerLinkActive="active">Login</a>
+      <li *ngIf="!isLogin" class="nav-item">
+        <a class="btn btn-primary" [routerLink]="['login']" routerLinkActive="active">Login</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['registro']">Registrar</a>
+      <li *ngIf="!isLogin" class="nav-item">
+        <a class="btn btn-success"  [routerLink]="['registro']">Registrar</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['gestion']">Gestion libros</a>
+      <li *ngIf="isLogin" class="nav-item">
+        <a class="btn btn-danger" (click)="onClickLogout()">LogOut</a>
       </li>
     </ul>
   </div>

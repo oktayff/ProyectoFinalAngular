@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -9,7 +10,7 @@ import 'rxjs/add/operator/map';
 })
 export class AutenticacionService {
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, public router: Router) {
   }
 
   loginGoogle() {
@@ -37,7 +38,10 @@ export class AutenticacionService {
   }
 
   logout() {
-    return this.afAuth.auth.signOut();
-  }
+    return this.afAuth.auth.signOut()
+    .then((res) => {
+      this.router.navigate(['/login']);
+  });
+}
 
 }

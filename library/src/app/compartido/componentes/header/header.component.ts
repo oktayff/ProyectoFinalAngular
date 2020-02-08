@@ -1,3 +1,4 @@
+import { AutenticacionService } from './../../../servicios/autenticacion.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public isLogin: boolean;
+
+  constructor(public authService: AutenticacionService) { }
 
   ngOnInit() {
+
+    this.authService.getAuth().subscribe( auth => {
+      if (auth) {
+        this.isLogin = true;
+      } else {
+        this.isLogin = false;
+      }
+    });
+  }
+
+  onClickLogout() {
+    this.authService.logout();
+    ;
   }
 
 }
