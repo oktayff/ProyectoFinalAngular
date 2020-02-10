@@ -1,6 +1,7 @@
 import { AutenticacionService } from './../../../servicios/autenticacion.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
          this.router.navigate(['/gestion']);
        }).catch(err => {
          alert(err.message);
-       this.router.navigate(['/login']);
+         this.router.navigate(['/login']);
   });
 }
 

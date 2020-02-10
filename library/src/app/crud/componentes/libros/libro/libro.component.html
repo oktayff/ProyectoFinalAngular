@@ -20,31 +20,43 @@
         </tr>
       </tbody>
     </table>
+
     <form #libroForm="ngForm" (ngSubmit)="onSubmit(libroForm)">
       <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="libroService.selectedLibro.$key">
+
       <div class="form-group">
-        <input type="text" class="form-control" name="titulo" #name="ngModel"
-          [(ngModel)]="libroService.selectedLibro.titulo" placeholder="Añada el titulo">
+        <input type="text" class="form-control" ngModel name="titulo" #name="ngModel"
+          [(ngModel)]="libroService.selectedLibro.titulo" required placeholder="Añada el titulo">
+        <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="alert alert-danger">Title is required</div>
+        <!-- <div *ngIf="libroService.selectedLibro.titulo.invalid && (libroService.selectedLibro.titulo.dirty || libroService.selectedLibro.titulo.touched)" class="alert alert-danger">Title is required</div> -->
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" name="autor" #autor="ngModel"
-          [(ngModel)]="libroService.selectedLibro.autor" placeholder="Añada el autor">
+        <input type="text" class="form-control" ngModel name="autor" #autor="ngModel"
+          [(ngModel)]="libroService.selectedLibro.autor" required placeholder="Añada el autor">
+          <div *ngIf="autor.invalid && (autor.dirty || autor.touched)" class="alert alert-danger">Author is required</div>
+          <!-- <div *ngIf="libroService.selectedLibro.autor.invalid && (libroService.selectedLibro.autor.dirty || libroService.selectedLibro.autor.touched)" class="alert alert-danger">Author is required</div> -->
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" name="genero" #genero="ngModel"
-          [(ngModel)]="libroService.selectedLibro.genero" placeholder="Añada el genero">
+        <input type="text" class="form-control" ngModel name="genero" #genero="ngModel"
+          [(ngModel)]="libroService.selectedLibro.genero" required placeholder="Añada el genero">
+          <div *ngIf="genero.invalid && (genero.dirty || genero.touched)" class="alert alert-danger">Genre is required</div>
+          <!-- <div *ngIf="libroService.selectedLibro.genero.invalid && (libroService.selectedLibro.genero.dirty || libroService.selectedLibro.genero.touched)" class="alert alert-danger">Genre is required</div> -->
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" name="editorial" #editorial="ngModel"
-          [(ngModel)]="libroService.selectedLibro.editorial" placeholder="Añada la editorial">
+        <input type="text" class="form-control" ngModel name="editorial" #editorial="ngModel"
+          [(ngModel)]="libroService.selectedLibro.editorial" required placeholder="Añada la editorial">
+          <div *ngIf="editorial.invalid && (editorial.dirty || editorial.touched)" class="alert alert-danger">Editor is required</div>
+          <!-- <div *ngIf="libroService.selectedLibro.editorial.invalid && (libroService.selectedLibro.editorial.dirty || libroService.selectedLibro.editorial.touched)" class="alert alert-danger">Editor is required</div> -->
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" name="numPaginas" #numPaginas="ngModel"
-          [(ngModel)]="libroService.selectedLibro.numPaginas" placeholder="Añada el número de páginas">
+        <input type="text" class="form-control" ngModel name="numPaginas" #numPaginas="ngModel"
+          [(ngModel)]="libroService.selectedLibro.numPaginas" required placeholder="Añada el número de páginas">
+          <div *ngIf="numPaginas.invalid && (numPaginas.dirty || numPaginas.touched)" class="alert alert-danger">Number of pages is required</div>
+          <!-- <div *ngIf="libroService.selectedLibro.numPaginas.invalid && (libroService.selectedLibro.numPaginas.dirty || libroService.selectedLibro.numPaginas.touched)" class="alert alert-danger">Number of pages is required</div> -->
       </div>
 
       <div class="form-group">
