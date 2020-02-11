@@ -10,11 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  public email: string;
-  public password: string;
-
-  public emaillogin:any = '';
-  public passwordlogin:any = '';
+  public emaillogin: any = '';
+  public passwordlogin: any = '';
 
 
   constructor(

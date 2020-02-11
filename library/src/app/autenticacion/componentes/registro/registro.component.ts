@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
 
-  public email: string;
-  public password: string;
+  public emailregistro:any = '';
+  public passwordregistro:any = '';
 
   constructor(
     public authService: AutenticacionService,
@@ -22,7 +22,7 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmitAddUser() {
-    this.authService.registerUser(this.email, this.password)
+    this.authService.registerUser(this.emailregistro, this.passwordregistro)
     .then((res) => {
       alert('Usuario creado correctamente.');
       this.router.navigate(['/gestion']);

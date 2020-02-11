@@ -11,6 +11,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LibroComponent implements OnInit {
 
+  public titulolibro: any = '';
+  public autorlibro: any = '';
+  public generolibro: any = '';
+  public editoriallibro: any = '';
+  public numpaginaslibro: any = '';
+
   libroList: Libro[];
 
   constructor(private libroService: LibroService, private toastr: ToastrService) { }

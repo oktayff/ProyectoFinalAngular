@@ -1,6 +1,6 @@
 import { RegistroComponent } from './autenticacion/componentes/registro/registro.component';
 import { LoginComponent } from './autenticacion/componentes/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrudModule } from './crud/crud.module';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,6 +42,7 @@ import { AuthGuard } from './servicios/guard.service';
     AngularFireModule.initializeApp(environment.firebase),
     CrudModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     AngularFireAuthModule
@@ -53,6 +54,5 @@ import { AuthGuard } from './servicios/guard.service';
 
   ],
   bootstrap: [AppComponent]
-  
 })
 export class AppModule { }
