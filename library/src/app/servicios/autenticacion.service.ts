@@ -25,7 +25,8 @@ export class AutenticacionService {
     });
   }
 
-  loginEmail(email: string, pass: string) {
+  loginEmail(email: any, pass: any) {
+    console.log(email + ""+ pass + "" + typeof(email))
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithEmailAndPassword(email, pass)
       .then( userData =>  resolve(userData),

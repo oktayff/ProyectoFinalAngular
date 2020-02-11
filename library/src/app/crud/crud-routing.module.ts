@@ -5,7 +5,7 @@ import { AuthGuard } from '../servicios/guard.service';
 
 
 const routes: Routes = [
-   { path: 'gestion', component: LibroComponent, canActivate: [AuthGuard] }
+   
 ];
 
 @NgModule({

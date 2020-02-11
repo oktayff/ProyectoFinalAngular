@@ -24,8 +24,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 //Servicios
 
 import { LibroService } from './servicios/libro.service';
-
-
+import { AuthGuard } from './servicios/guard.service';
 
 
 @NgModule({
@@ -34,6 +33,7 @@ import { LibroService } from './servicios/libro.service';
     LoginComponent,
     RegistroComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,8 +48,11 @@ import { LibroService } from './servicios/libro.service';
 
   ],
   providers: [
+    AuthGuard,
     LibroService
+
   ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }

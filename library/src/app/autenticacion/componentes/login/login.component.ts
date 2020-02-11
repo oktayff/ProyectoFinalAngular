@@ -13,6 +13,10 @@ export class LoginComponent implements OnInit {
   public email: string;
   public password: string;
 
+  public emaillogin:any = '';
+  public passwordlogin:any = '';
+
+
   constructor(
     public authService: AutenticacionService,
     public router: Router) { }
@@ -21,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin() {
-    this.authService.loginEmail(this.email, this.password)
+    this.authService.loginEmail(this.emaillogin, this.passwordlogin)
       .then((res) => {
         alert('Usuario logado correctamente.');
         this.router.navigate(['/gestion']);
