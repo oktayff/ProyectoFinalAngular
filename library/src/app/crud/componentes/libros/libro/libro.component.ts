@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LibroComponent implements OnInit {
 
+  // Variables asociadas a los campos del formulario para añadir un nuevo libro
   public titulolibro: any = '';
   public autorlibro: any = '';
   public generolibro: any = '';
@@ -67,7 +68,6 @@ export class LibroComponent implements OnInit {
     } else {
       this.libroService.updateLibro(libroForm.value);
     }
-
     this.resetForm(libroForm);
   }
 

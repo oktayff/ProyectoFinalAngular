@@ -8,12 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  // Variable en la que guardaremos nuestro estado de logueo
   public isLogin: boolean;
 
   constructor(public authService: AutenticacionService) { }
 
   ngOnInit() {
 
+    // Nos suscribimos al método getAuth que cuando estamos logueados hace que la variable isLogin sea
+    // true y en caso de que no estemos logueados sea false
     this.authService.getAuth().subscribe( auth => {
       if (auth) {
         this.isLogin = true;
@@ -23,9 +26,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  // Método que sirve para cerrar la sesión
   onClickLogout() {
     this.authService.logout();
-    ;
   }
-
 }

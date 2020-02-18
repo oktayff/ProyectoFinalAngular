@@ -5,11 +5,12 @@ import { RegistroComponent } from './autenticacion/componentes/registro/registro
 import { LibroComponent } from './crud/componentes/libros/libro/libro.component';
 import { AuthGuard } from './servicios/guard.service';
 
+// Definimos las rutas de nuestra aplicación
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent},
   { path: 'registro', component: RegistroComponent},
-  { path: 'gestion', component: LibroComponent, canActivate: [AuthGuard] }
+  { path: 'gestion', component: LibroComponent, canActivate: [AuthGuard] } // La ruta 'gestion' está protegida
 ];
 
 @NgModule({

@@ -16,7 +16,9 @@ export class AuthGuard implements CanActivate {
     private authService: AutenticacionService
 
   ) { }
-
+  // Lo que hace canActivate es mirar si el usuario puede acceder a una ruta específica o no, en nuestro caso
+  // debe ser imposbile acceder a la parte de gestión de libros sin que el usuario esté logueado por lo que
+  // en caso de que no estemos logueados hacemos un navigate al login
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
