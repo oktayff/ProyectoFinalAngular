@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registro',
@@ -15,7 +16,8 @@ export class RegistroComponent implements OnInit {
 
   constructor(
     public authService: AutenticacionService,
-    public router: Router) { }
+    public router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
 
@@ -27,10 +29,10 @@ export class RegistroComponent implements OnInit {
   onSubmitAddUser() {
     this.authService.registerUser(this.emailregistro, this.passwordregistro)
     .then((res) => {
-      alert('Usuario creado correctamente.');
+      this.toastr.success('Usuario creado correctamente');
       this.router.navigate(['/gestion']);
     }).catch( (err) => {
-      alert(err.message);
+      this.toastr.error('Ha ocurrido un error inesperado, vuelva a intentarlo');
       this.router.navigate(['/registro']);
     });
   }

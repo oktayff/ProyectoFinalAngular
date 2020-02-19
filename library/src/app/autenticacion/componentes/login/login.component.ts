@@ -1,6 +1,7 @@
 import { AutenticacionService } from './../../../servicios/autenticacion.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public authService: AutenticacionService,
-    public router: Router) { }
+    public router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -26,10 +28,10 @@ export class LoginComponent implements OnInit {
   onSubmitLogin() {
     this.authService.loginEmail(this.emaillogin, this.passwordlogin)
       .then((res) => {
-        alert('Usuario logado correctamente.');
+        this.toastr.success('Se ha iniciado la sesión');
         this.router.navigate(['/gestion']);
       }).catch((err) => {
-        alert(err.message);
+        alert(err);
         this.router.navigate(['/login']);
       });
   }
@@ -39,9 +41,10 @@ export class LoginComponent implements OnInit {
   onClickGoogleLogin() {
     this.authService.loginGoogle()
        .then((res) => {
+         this.toastr.success('Ha iniciado sesión con su cuenta de Google');
          this.router.navigate(['/gestion']);
        }).catch(err => {
-         alert(err.message);
+         alert(err);
          this.router.navigate(['/login']);
     });
   }

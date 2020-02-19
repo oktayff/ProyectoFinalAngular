@@ -1,3 +1,13 @@
 label {
   color: white;
 }
+
+#loginForm {
+  position: absolute;
+  top: 80px;
+  padding: 20px;
+}
+
+button {
+  background-color: white;
+}

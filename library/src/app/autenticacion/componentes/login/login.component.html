@@ -18,18 +18,12 @@
               required</div>
           </div>
           <input type="submit" [disabled]="f.invalid" value="Login" class="btn btn-primary btn-block btn-lg">
+          <br>
+          <div class="container d-flex justify-content-around" id="botonGoogle">
+            <button class="btn btn-lg btn-google" (click)="onClickGoogleLogin()"><i class="fab fa-google"
+                aria-hidden="true"></i> Google</button>
+          </div>
         </form>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-3 mx-auto mt-2">
-      <div class="card">
-        <div class="container d-flex justify-content-around">
-          <button class="btn btn-lg btn-google" (click)="onClickGoogleLogin()"><i class="fab fa-google"
-              aria-hidden="true"></i> Google</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
