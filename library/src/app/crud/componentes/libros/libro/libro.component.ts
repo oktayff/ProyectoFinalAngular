@@ -20,7 +20,7 @@ export class LibroComponent implements OnInit {
 
   libroList: Libro[];
 
-  constructor(private libroService: LibroService, private toastr: ToastrService) { }
+  constructor(public libroService: LibroService, private toastr: ToastrService) { }
 
   // Asignamos el valor $key a una variable x y lo introducimos dentro del array libroList como si fuese un
   // libro con todos sus atributos. De esta manera evitamos que mientras estamos editando un libro también
