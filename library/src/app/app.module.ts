@@ -10,18 +10,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompartidoModule } from './compartido/compartido.module';
 
-//Animaciones para las notificaciones
+// Animaciones para las notificaciones
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-//Firebase
+// Firebase
 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-//Servicios
+// Servicios
 
 import { LibroService } from './servicios/libro.service';
 import { AuthGuard } from './servicios/guard.service';
